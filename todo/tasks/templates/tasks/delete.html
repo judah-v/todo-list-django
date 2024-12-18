@@ -1,0 +1,14 @@
+{% extends 'tasks/base.html' %}
+{% }
+{% block content %}
+<div class=" center-column">
+	<p class="h5">Are you sure you want to delete "{{item}}"?</p>
+	<div class="container d-flex justify-content-center">
+		<input type="button" class="btn btn-info mx-1 w-auto" onclick="location.assign('{% url "list" %}')" value="Cancel">
+		<form class="d-inline" method="POST" action="">
+			{% csrf_token %}
+			<input class="btn btn-danger mx-1" type="submit" name="Confirm" value="Confirm">
+		</form>
+	</div>
+</div>
+{% endblock content %}
